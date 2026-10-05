@@ -1,4 +1,5 @@
-# 🌿 Bien-être en Combrailles  
+# 🌿 Bien-être en Combrailles
+
 Site vitrine – Aide à domicile & accompagnement bienveillant
 
 [![HTML5](https://img.shields.io/badge/HTML5-orange?logo=html5&logoColor=white)]()
@@ -20,20 +21,20 @@ Il inclut un formulaire de contact fonctionnel grâce à **Formspree**.
 ## 📁 Structure du projet
 
 /
-├── index.html               # Page d’accueil
-├── contact.html             # Formulaire de contact
-├── styles.css               # Styles du site
-├── images/                  # Ressources visuelles
-└── README.md                # Documentation
+├── index.html # Page d’accueil
+├── contact.html # Formulaire de contact
+├── styles.css # Styles du site
+├── images/ # Ressources visuelles
+└── README.md # Documentation
 
 ---
 
 ## 🚀 Déploiement via GitHub Pages
 
-1. Ouvrir **Settings**  
-2. Aller dans **Pages**  
-3. Sélectionner la branche : `main`  
-4. Dossier : `/root`  
+1. Ouvrir **Settings**
+2. Aller dans **Pages**
+3. Sélectionner la branche : `main`
+4. Dossier : `/root`
 5. Enregistrer
 
 GitHub génère automatiquement l’URL publique du site.
@@ -64,7 +65,8 @@ maxym.duculty15@gmail.com
 
 # 🇬🇧 English Version
 
-## 🌿 Bien-être en Combrailles  
+## 🌿 Bien-être en Combrailles
+
 Showcase website – Home assistance & supportive care
 
 [![HTML5](https://img.shields.io/badge/HTML5-orange?logo=html5&logoColor=white)]()
@@ -84,22 +86,22 @@ A functional contact form is integrated using **Formspree**.
 ---
 
 ## 📁 Project Structure
-/
-├── index.html               # Home page
-├── contact.html             # Contact form
-├── styles.css               # Main stylesheet
-├── images/                  # Visual assets
-└── README.md                # Documentation
 
+/
+├── index.html # Home page
+├── contact.html # Contact form
+├── styles.css # Main stylesheet
+├── images/ # Visual assets
+└── README.md # Documentation
 
 ---
 
 ## 🚀 Deployment with GitHub Pages
 
-1. Open **Settings**  
-2. Go to **Pages**  
-3. Select branch: `main`  
-4. Folder: `/root`  
+1. Open **Settings**
+2. Go to **Pages**
+3. Select branch: `main`
+4. Folder: `/root`
 5. Save
 
 GitHub will automatically generate the public website URL.
@@ -125,7 +127,3 @@ Website developed by Moldu77 as part of a personal web development project.
 
 For any question regarding the website:  
 maxym.duculty15@gmail.com
-
-
-
-
