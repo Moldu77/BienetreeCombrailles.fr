@@ -22,13 +22,15 @@ Le site est **100 % statique** (HTML, CSS, un peu de JavaScript), sans framework
 
 ### Fonctionnalités
 
-- **Page d'accueil** en une seule page avec ancres : accueil, prestations, présence de nuit, tarifs, avis, contact
-- **Formulaire de contact** envoyé via [Formspree](https://formspree.io/) (aucun serveur à gérer)
+- **Page d'accueil** en une seule page avec ancres : accueil, prestations, tarifs, présence de nuit, avis, zone d'intervention, FAQ, contact
+- **Pages prestations** : aide à domicile, présence de nuit, répit des aidants
+- **Formulaire de contact** envoyé via [Formspree](https://formspree.io/) sans rechargement de la page (`fetch`), avec message de confirmation ou d'erreur
 - **Responsive** : menu mobile (burger) accessible (`aria-expanded`, `aria-label`)
 - **Navigation active** au défilement (IntersectionObserver) sur la page d'accueil
 - **Année du pied de page** mise à jour automatiquement
-- **SEO** : balises meta, Open Graph / Twitter Card, `sitemap.xml`, `robots.txt`, vérification Google Search Console
-- **Pages légales** : mentions légales, CGV (avec médiation de la consommation CM2C), politique de confidentialité, RGPD
+- **SEO** : balises meta, `canonical`, Open Graph / Twitter Card, données structurées (LocalBusiness, Service, FAQPage, fil d'Ariane), favicon, images WebP optimisées, `sitemap.xml`, `robots.txt`, vérification Google Search Console
+- **Pages légales** : mentions légales, CGV (droit de rétractation, médiation de la consommation CM2C), politique de confidentialité et RGPD
+- **Sans cookie** : polices hébergées sur le site, carte Google Maps chargée uniquement au clic (pas de bandeau cookies nécessaire)
 - Liens vers les réseaux sociaux (Facebook, Instagram, TikTok) et les avis Google
 
 ### Structure du projet
@@ -36,14 +38,19 @@ Le site est **100 % statique** (HTML, CSS, un peu de JavaScript), sans framework
 ```
 /
 ├── index.html               # Page d'accueil (one-page)
+├── aide-a-domicile.html     # Prestation : aide à domicile
+├── presence-de-nuit.html    # Prestation : présence de nuit
+├── repit-des-aidants.html   # Prestation : répit des aidants
 ├── FORM.html                # Formulaire de contact (Formspree)
 ├── cgv.html                 # Conditions générales de vente
 ├── mentions-legales.html    # Mentions légales
 ├── confidentialite.html     # Politique de confidentialité
-├── rgpd.html                # Informations RGPD
+├── rgpd.html                # Redirection vers confidentialite.html
 ├── styles.css               # Feuille de style unique
-├── script.js                # Menu mobile, année, lien actif
-├── images/                  # Logos, photos, visuels (prestations, tarifs…)
+├── script.js                # Menu mobile, année, lien actif, envoi du formulaire
+├── favicon.ico              # Icône du site
+├── fonts/                   # Polices Fraunces et Work Sans (woff2)
+├── images/                  # Photos, bannière, logos, icônes (WebP)
 ├── sitemap.xml              # Plan du site pour les moteurs de recherche
 ├── robots.txt               # Règles d'exploration
 ├── CNAME                    # Domaine personnalisé GitHub Pages
@@ -57,7 +64,7 @@ Le site est **100 % statique** (HTML, CSS, un peu de JavaScript), sans framework
 |---|---|
 | HTML5 / CSS3 | Structure et mise en page |
 | JavaScript (vanilla) | Interactions légères (`script.js`) |
-| Google Fonts | Polices *Fraunces* et *Work Sans* |
+| Polices locales (`fonts/`) | *Fraunces* et *Work Sans* (licence SIL OFL), sans appel à Google |
 | Formspree | Réception des messages du formulaire |
 | GitHub Pages | Hébergement + HTTPS |
 
@@ -119,13 +126,15 @@ The site is **100% static** (HTML, CSS, a little JavaScript), with no framework 
 
 ### Features
 
-- **One-page home** with anchors: home, services, overnight presence, pricing, reviews, contact
-- **Contact form** powered by [Formspree](https://formspree.io/) (no server to maintain)
+- **One-page home** with anchors: home, services, pricing, overnight presence, reviews, service area, FAQ, contact
+- **Service pages**: home help, overnight presence, respite for caregivers
+- **Contact form** powered by [Formspree](https://formspree.io/), sent without reloading the page (`fetch`), with a success or error message
 - **Responsive**: accessible mobile burger menu (`aria-expanded`, `aria-label`)
 - **Active nav link** on scroll (IntersectionObserver) on the home page
 - **Footer year** updated automatically
-- **SEO**: meta tags, Open Graph / Twitter Card, `sitemap.xml`, `robots.txt`, Google Search Console verification
-- **Legal pages**: legal notice, terms of sale (CGV, incl. CM2C consumer mediation), privacy policy, GDPR
+- **SEO**: meta tags, `canonical`, Open Graph / Twitter Card, structured data (LocalBusiness, Service, FAQPage, breadcrumbs), favicon, optimized WebP images, `sitemap.xml`, `robots.txt`, Google Search Console verification
+- **Legal pages**: legal notice, terms of sale (CGV, incl. right of withdrawal and CM2C consumer mediation), privacy policy and GDPR
+- **Cookie-free**: self-hosted fonts, Google Maps loaded only on click (no cookie banner needed)
 - Links to social networks (Facebook, Instagram, TikTok) and Google reviews
 
 > The site content itself is in French, as it targets a local French audience.
@@ -135,14 +144,19 @@ The site is **100% static** (HTML, CSS, a little JavaScript), with no framework 
 ```
 /
 ├── index.html               # Home page (one-page)
+├── aide-a-domicile.html     # Service: home help
+├── presence-de-nuit.html    # Service: overnight presence
+├── repit-des-aidants.html   # Service: respite for caregivers
 ├── FORM.html                # Contact form (Formspree)
 ├── cgv.html                 # Terms and conditions of sale
 ├── mentions-legales.html    # Legal notice
 ├── confidentialite.html     # Privacy policy
-├── rgpd.html                # GDPR information
+├── rgpd.html                # Redirect to confidentialite.html
 ├── styles.css               # Single stylesheet
-├── script.js                # Mobile menu, footer year, active link
-├── images/                  # Logos, photos, visuals (services, pricing…)
+├── script.js                # Mobile menu, footer year, active link, form submission
+├── favicon.ico              # Site icon
+├── fonts/                   # Fraunces and Work Sans fonts (woff2)
+├── images/                  # Photos, banner, logos, icons (WebP)
 ├── sitemap.xml              # Sitemap for search engines
 ├── robots.txt               # Crawler rules
 ├── CNAME                    # GitHub Pages custom domain
@@ -156,7 +170,7 @@ The site is **100% static** (HTML, CSS, a little JavaScript), with no framework 
 |---|---|
 | HTML5 / CSS3 | Structure and layout |
 | Vanilla JavaScript | Light interactions (`script.js`) |
-| Google Fonts | *Fraunces* and *Work Sans* typefaces |
+| Self-hosted fonts (`fonts/`) | *Fraunces* and *Work Sans* (SIL OFL), no request to Google |
 | Formspree | Receives contact form submissions |
 | GitHub Pages | Hosting + HTTPS |
 

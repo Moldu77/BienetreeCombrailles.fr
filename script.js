@@ -52,4 +52,79 @@ document.addEventListener("DOMContentLoaded", function () {
       observer.observe(section);
     });
   }
+
+  /* ---- Formulaire de contact : envoi sans rechargement (Formspree) ---- */
+  var form = document.getElementById("contactForm");
+  var responseMessage = document.getElementById("responseMessage");
+
+  if (form && responseMessage && window.fetch) {
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var submitHtml = submitBtn.innerHTML;
+
+    var showMessage = function (text, type) {
+      responseMessage.textContent = text;
+      responseMessage.className = "message is-" + type;
+    };
+
+    form.addEventListener("submit", function (event) {
+      // Le navigateur a déjà vérifié les champs obligatoires avant d'arriver ici.
+      event.preventDefault();
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Envoi en cours…";
+      responseMessage.className = "message";
+      responseMessage.textContent = "";
+
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      })
+        .then(function (response) {
+          if (response.ok) {
+            form.reset();
+            showMessage(
+              "Merci, votre message a bien été envoyé ! Je vous réponds sous 48 h.",
+              "success",
+            );
+            return;
+          }
+          return response.json().then(function (data) {
+            var detail =
+              data && data.errors
+                ? data.errors
+                    .map(function (e) {
+                      return e.message;
+                    })
+                    .join(", ")
+                : "";
+            throw new Error(detail);
+          });
+        })
+        .catch(function (error) {
+          showMessage(
+            "Le message n'a pas pu être envoyé" +
+              (error.message ? " (" + error.message + ")" : "") +
+              ". Réessayez ou appelez le 06 19 92 03 58.",
+            "error",
+          );
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = submitHtml;
+        });
+    });
+  }
+
+  /* ---- Carte Google Maps chargée uniquement au clic (pas de cookie sans action) ---- */
+  document.querySelectorAll("[data-map-src]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var iframe = document.createElement("iframe");
+      iframe.src = button.getAttribute("data-map-src");
+      iframe.title = "Carte - Bien-être en Combrailles, Montfermy (63)";
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      iframe.allowFullscreen = true;
+      button.closest(".map-consent").replaceWith(iframe);
+    });
+  });
 });

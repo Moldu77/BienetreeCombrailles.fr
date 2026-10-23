@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://bienetreencombrailles.fr/</loc></url>
-  <url><loc>https://bienetreencombrailles.fr/cgv.html</loc></url>
-  <url><loc>https://bienetreencombrailles.fr/mentions-legales.html</loc></url>
-  <url><loc>https://bienetreencombrailles.fr/confidentialite.html</loc></url>
-  <url><loc>https://bienetreencombrailles.fr/rgpd.html</loc></url>
-  <url><loc>https://bienetreencombrailles.fr/FORM.html</loc></url>
+  <url><loc>https://bienetreencombrailles.fr/</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://bienetreencombrailles.fr/aide-a-domicile.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://bienetreencombrailles.fr/presence-de-nuit.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://bienetreencombrailles.fr/repit-des-aidants.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://bienetreencombrailles.fr/FORM.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://bienetreencombrailles.fr/cgv.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://bienetreencombrailles.fr/mentions-legales.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://bienetreencombrailles.fr/confidentialite.html</loc><lastmod>2026-10-23</lastmod></url>
 </urlset>
