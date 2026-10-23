@@ -674,21 +674,111 @@ p {
 
 /* ---------- Avis ---------- */
 
+/* Deux colonnes : invitation à laisser un avis + avis clients */
 .reviews {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+
+.reviews-intro {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
   gap: 16px;
 }
 
-.reviews h2 {
-  max-width: 620px;
+.reviews-intro h2 {
+  max-width: 560px;
 }
 
-.reviews p {
+.reviews-intro p {
   color: var(--muted);
-  max-width: 540px;
+  max-width: 480px;
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.review-card {
+  margin: 0;
+  background: var(--card);
+  border: 1px solid var(--tag-border);
+  border-radius: 18px;
+  padding: 24px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 14px 32px rgba(34, 48, 31, 0.07);
+}
+
+.review-card-compact {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-block: 18px;
+}
+
+.review-stars {
+  color: var(--gold);
+  font-size: 18px;
+  letter-spacing: 3px;
+  line-height: 1;
+}
+
+.review-card blockquote {
+  margin: 0;
+}
+
+.review-card blockquote p {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--ink-dark);
+}
+
+.review-card figcaption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.review-card figcaption strong {
+  display: block;
+  color: var(--ink-dark);
+}
+
+.review-meta {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.review-avatar {
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--tag-bg);
+  color: var(--sauge-dark);
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.reviews-all {
+  font-size: 14.5px;
 }
 
 /* ---------- Contact & carte ---------- */
@@ -1680,6 +1770,10 @@ p {
   }
 
   .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews {
     grid-template-columns: 1fr;
   }
 
